@@ -11,4 +11,5 @@
     - Dockerfile-balance
     - index.html
     - nginx.conf
+    - docker-compose.yml
 
