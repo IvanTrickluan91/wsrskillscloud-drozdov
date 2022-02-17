@@ -1,15 +1,29 @@
-- name: create folder
+- name: create folders
   file: 
-    path: /root/skillcloud-nginx
+    path: '{{ item }}'
     state: directory
-- name: copy files
+  with_items:
+    - /root/skillcloud-nginx/
+    - /root/skillcloud-nginx/site
+    - /root/skillcloud-nginx/balance
+- name: copy docker-compose.yml
   copy:
     src: '{{ item }}'
     dest: /root/skillcloud-nginx
   with_items:
-    - Dockerfile-site
-    - Dockerfile-balance
-    - index.html
-    - nginx.conf
     - docker-compose.yml
+- name: copy files for site
+  copy:
+    src: '{{ item }}'
+    dest: /root/skillcloud-nginx/site
+  with_items:
+    - Dockerfile-site
+    - index.html
+- name: copy files for balance
+  copy:
+    src: '{{ item }}'
+    dest: /root/skillcloud-nginx/balance
+  with_items:
+    - Dockerfile-balance
+    - nginx.conf
 

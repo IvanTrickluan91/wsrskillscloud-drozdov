@@ -1,12 +1,23 @@
 ---
 - hosts: all
+  #vars:
+  # - 
   roles:
     - update
     - ufw
     - users
+    - nginx
     - docker
     - docker-compose
-    - nginx
     - restart-services
     - ssh
+- hosts: 127.0.0.1
+  roles:
+    - change_inventory
+- hosts: all
+  roles:
     - reboot-machine
+  tasks:
+  - name: END
+    file:
+      path: /home/touch

@@ -1,9 +1,18 @@
-- name: configure inventory file
-  lineinfile:
+- name: configure inventory file 1
+  replace:
     path: /root/wsrskillscloud-drozdov/inventory
-    line: ':1834'
-    insertafter: '{{ item }}'
-  with_items:
-    - '10.11.14.41'
-    - '10.11.14.42'
-    - '10.11.14.43' 
+    regexp: '10.11.14.41'
+    replace: '10.11.14.41:1834'
+  ignore_errors: yes
+- name: configure inventory file 2
+  replace:
+    path: /root/wsrskillscloud-drozdov/inventory
+    regexp: '10.11.14.42'
+    replace: '10.11.14.42:1834'
+  ignore_errors: yes
+- name: configure inventory file 3
+  replace:
+    path: /root/wsrskillscloud-drozdov/inventory
+    regexp: '10.11.14.43'
+    replace: '10.11.14.43:1834'
+  ignore_errors: yes

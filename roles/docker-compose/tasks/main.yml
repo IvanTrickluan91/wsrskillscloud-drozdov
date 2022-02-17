@@ -6,3 +6,9 @@
 - name: install docker-compose.sh
   shell: |
     /root/docker-compose.sh
+#- name: run docker-compose.yml
+#  docker_compose:
+#   project_src: /root/skillcloud-nginx/docker-compose.yml
+# register: output
+#- debug:
+#   var: output

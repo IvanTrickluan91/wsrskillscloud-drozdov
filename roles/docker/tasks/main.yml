@@ -2,3 +2,16 @@
   apt:
     name: 
       - docker
+      - docker.io
+#- name: build site
+#  docker_image:
+#   name: site:site
+#   build: 
+#     path: /root/skillcloud-nginx/site/
+#   source: build
+#- name: build balance
+# docker_image:
+#   name: balance:balance
+#   build: 
+#     path: /root/skillcloud-nginx/balance
+#   source: build
