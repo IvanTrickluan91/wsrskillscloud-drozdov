@@ -1,0 +1,11 @@
+- name: configure ssh
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    block: | 
+      Port 1834
+      AllowUsers Webdeveloper Devopsengineer Projectmanager root
+      PubkeyAuthentication yes
+  notify: restart ssh
+
+
+

@@ -1,0 +1,11 @@
+- name: allow ports
+  ufw:
+    rule: allow
+    port: '{{ item }}'
+    state: enabled
+  with_items: 
+    - '80'
+    - '8080'
+    - '1834'
+    - '22'
+

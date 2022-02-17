@@ -1,0 +1,14 @@
+- name: create folder
+  file: 
+    path: /root/skillcloud-nginx
+    state: directory
+- name: copy files
+  copy:
+    src: '{{ item }}'
+    dest: /root/skillcloud-nginx
+  with_items:
+    - Dockerfile-site
+    - Dockerfile-balance
+    - index.html
+    - nginx.conf
+

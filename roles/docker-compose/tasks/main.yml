@@ -1,0 +1,8 @@
+- name: copy docker-compose.sh
+  copy:
+    src: docker-compose.sh
+    dest: /root/
+    mode: '0777'
+- name: install docker-compose.sh
+  shell: |
+    /root/docker-compose.sh

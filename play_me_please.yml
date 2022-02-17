@@ -1,0 +1,12 @@
+---
+- hosts: all
+  roles:
+    - update
+    - ufw
+    - users
+    - docker
+    - docker-compose
+    - nginx
+    - restart-services
+    - ssh
+    - reboot-machine

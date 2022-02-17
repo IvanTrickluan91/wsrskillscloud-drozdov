@@ -1,0 +1,5 @@
+- name: update packages and install curl
+  apt:
+    update_cache: yes
+    name: curl
+

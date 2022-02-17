@@ -1,0 +1,9 @@
+- name: configure inventory file
+  lineinfile:
+    path: /root/wsrskillscloud-drozdov/inventory
+    line: ':1834'
+    insertafter: '{{ item }}'
+  with_items:
+    - '10.11.14.41'
+    - '10.11.14.42'
+    - '10.11.14.43' 
